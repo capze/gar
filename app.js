@@ -62,6 +62,10 @@ class GarbageClassifier {
         try {
             this.showStatus('正在加載模型...', 'warning');
             
+            if (typeof tmImage === 'undefined') {
+                throw new Error('tmImage 未定義：請檢查 Teachable Machine 引用是否正確載入。');
+            }
+
             // 使用 Teachable Machine API 加載模型
             const URL = './garbage/model.json';
             const metadataURL = './garbage/metadata.json';
