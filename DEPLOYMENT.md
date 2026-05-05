@@ -22,8 +22,7 @@
 - ✅ metadata.json (配置)
 
 ### 開發工具
-- ✅ Python HTTP 伺服器 (server.py)
-- ✅ Bash 啟動脚本 (run.sh)
+- ✅ 靜態前端資源 (index.html, styles.css, app.js)
 - ✅ 完整文檔 (README.md)
 - ✅ 快速開始指南 (QUICKSTART.md)
 - ✅ 配置指南 (CONFIG.md)
@@ -32,33 +31,29 @@
 
 ## 🌐 本地部署
 
-### 方式 1: Python 伺服器 (推薦)
+### 方式 1: Python 內建靜態伺服器
 
 ```bash
 # 進入項目目錄
 cd /workspaces/gar
 
-# 運行 Python 伺服器
-python3 server.py
-
-# 或使用 shell 腳本
-bash run.sh
+# 運行 Python 內建伺服器
+python3 -m http.server 8000
 ```
 
 ✅ 優點：
 - 簡單易用
-- 無需額外依賴
-- 自動開啟瀏覽器
-- 內置 CORS 支援
+- 只需靜態資源
+- 支援本地 HTTPS/localhost 測試
 
-### 方式 2: PHP 伺服器
+### 方式 2: Node.js 靜態伺服器
 
 ```bash
 cd /workspaces/gar
 php -S localhost:8000
 ```
 
-### 方式 3: Node.js HTTP Server
+### 方式 3: Node.js 靜態伺服器
 
 ```bash
 npm install -g http-server
@@ -74,7 +69,7 @@ FROM python:3.11-slim
 WORKDIR /app
 COPY . /app
 EXPOSE 8000
-CMD ["python3", "server.py"]
+CMD ["python3", "-m", "http.server", "8000"]
 ```
 
 構建和運行：

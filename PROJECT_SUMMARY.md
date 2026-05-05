@@ -11,7 +11,7 @@
 | **JavaScript 檔案** | 1 |
 | **文檔檔案** | 5 |
 | **模型檔案** | 3 (model.json, metadata.json, weights.bin) |
-| **開發工具** | 3 (server.py, run.sh 等) |
+| **開發工具** | 0 |
 | **總行數** | ~2500+ |
 | **總大小** | 2.5 MB |
 
@@ -22,9 +22,7 @@ gar/
 ├── 📄 index.html          - HTML 主頁 (2.4 KB)
 ├── 🎨 styles.css          - 響應式樣式表 (8.3 KB)
 ├── ⚙️  app.js             - 應用邏輯 (11 KB)
-├── 🐍 server.py           - Python HTTP 服務器 (1.9 KB)
-├── 🏃 run.sh              - Bash 啟動腳本
-├── 📚 README.md           - 完整文檔 (8.9 KB)
+├──  README.md           - 完整文檔 (8.9 KB)
 ├── 🚀 QUICKSTART.md       - 快速開始指南
 ├── 🎨 CONFIG.md           - 配置指南
 ├── 🚀 DEPLOYMENT.md       - 部署指南
@@ -152,7 +150,7 @@ gar/
 
 ### 本地開發
 ```bash
-python3 server.py
+python3 -m http.server 8000
 # 訪問: http://localhost:8000
 ```
 
@@ -309,7 +307,7 @@ python3 server.py
 ### 本地運行
 ```bash
 cd /workspaces/gar
-python3 server.py
+python3 -m http.server 8000
 # 打開 http://localhost:8000
 ```
 

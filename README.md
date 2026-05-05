@@ -45,22 +45,16 @@ git clone https://github.com/capze/gar.git
 cd gar
 ```
 
-### 2️⃣ 啟動伺服器
+### 2️⃣ 啟動靜態伺服器
 
-**方式 A: 使用 Python**
+本應用是純前端靜態頁面，可使用任何靜態資源伺服器。
+
 ```bash
-python3 server.py
-# 或
-python server.py
-```
+# 方式 A: 使用 Node.js 靜態伺服器
+npx http-server -p 8000
 
-**方式 B: 使用其他服務器**
-```bash
-# Node.js (如果安裝了 http-server)
-npx http-server
-
-# 或使用 PHP
-php -S localhost:8000
+# 方式 B: 使用 Python 內建靜態服務器
+python3 -m http.server 8000
 ```
 
 ### 3️⃣ 訪問應用
@@ -119,7 +113,6 @@ gar/
 ├── index.html           # 主 HTML 頁面
 ├── styles.css           # 樣式表（包含響應式設計）
 ├── app.js              # 主應用邏輯
-├── server.py           # Python 開發服務器
 ├── garbage/            # 模型文件夾
 │   ├── model.json      # 模型結構定義
 │   ├── metadata.json   # 模型元數據
@@ -239,8 +232,8 @@ if (confidence >= 0.7) {
 ### 本地開發
 
 ```bash
-# 1. 啟動開發服務器
-python3 server.py
+# 1. 啟動本地靜態伺服器
+python3 -m http.server 8000
 
 # 2. 在瀏覽器中打開
 http://localhost:8000

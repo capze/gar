@@ -250,31 +250,24 @@ quantized_tflite_model = converter.convert()
 
 ## 🌐 伺服器配置
 
-### 修改 Python 伺服器設定
+本應用為純前端靜態頁面，推薦使用本地靜態伺服器進行測試。
 
-編輯 `server.py`：
-
-```python
-PORT = 8000  # 改為其他端口 (例如 3000)
-
-# 綁定的 IP 地址
-HOST = "0.0.0.0"  # 所有 IP (改為 "127.0.0.1" 只限本地)
-```
-
-### 使用 Node.js 伺服器
+### 使用 Python 內建靜態伺服器
 
 ```bash
-# 安裝 http-server
-npm install -g http-server
+python3 -m http.server 8000
+```
 
-# 啟動
+### 使用 Node.js 靜態伺服器
+
+```bash
+npm install -g http-server
 http-server -p 8000
 ```
 
 ### 使用 PHP 內建伺服器
 
 ```bash
-# 啟動 (需要 PHP 5.4+)
 php -S localhost:8000
 ```
 
