@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垃圾分類辨識系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>♻️ 垃圾分類辨識系統</h1>
+            <p>拍照辨識垃圾類別</p>
+        </header>
+
+        <main>
+            <!-- 相機預覽區 -->
+            <div class="camera-section">
+                <div class="camera-container">
+                    <video id="camera" autoplay playsinline></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                </div>
+                <div class="button-group">
+                    <button id="startBtn" class="btn btn-primary">開啟相機</button>
+                    <button id="captureBtn" class="btn btn-capture" disabled>拍照</button>
+                    <button id="stopBtn" class="btn btn-danger" disabled>關閉相機</button>
+                </div>
+            </div>
+
+            <!-- 結果展示區 -->
+            <div class="result-section" id="resultSection" style="display: none;">
+                <div class="result-container">
+                    <div class="captured-image-wrapper">
+                        <img id="capturedImage" alt="拍攝的照片">
+                    </div>
+                    <div class="result-info">
+                        <h2>辨識結果</h2>
+                        <div id="predictionResults" class="predictions"></div>
+                        <button id="retakeBtn" class="btn btn-secondary">重新拍照</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 載入指示器 -->
+            <div id="loadingIndicator" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>正在分析中...</p>
+            </div>
+
+            <!-- 狀態信息 -->
+            <div id="statusMessage" class="status-message"></div>
+        </main>
+
+        <footer>
+            <p>使用 TensorFlow.js 進行實時圖像辨識</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8.5"></script>
+    <script src="app.js"></script>
+</body>
+</html>
